@@ -1,7 +1,7 @@
 import { SearchSharp } from '@mui/icons-material';
 import { InputAdornment, OutlinedInput } from '@mui/material';
 
-const SearchInputBox = ({ placeholder }) => {
+const SearchBox = ({ placeholder }) => {
   return (
     <OutlinedInput
       size='small'
@@ -16,4 +16,4 @@ const SearchInputBox = ({ placeholder }) => {
     />
   );
 };
-export default SearchInputBox;
+export default SearchBox;
