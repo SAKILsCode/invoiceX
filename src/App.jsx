@@ -1,15 +1,24 @@
 import { useState } from 'react';
-import Home from './pages/Home';
-import Dashboard from './pages/Dashboard';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { store } from '@/store/store';
+import { Provider } from 'react-redux';
+import { routes } from '@/routes';
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(false);
   return (
     <>
-      <h1>from App</h1>
-
-      {!isLogin && <Home />}
-      {isLogin && <Dashboard />}
+      <Provider store={store}>
+        <Router>
+          <Routes>
+            {
+              routes?.map((route, index) => {
+                return <Route key={index} path={route.path} element={<route.component />} />
+              })
+            }
+          </Routes>
+        </Router>
+      </Provider>
     </>
   )
 };
