@@ -1,10 +1,5 @@
 import { Box, Card, CardContent, Chip, Typography } from '@mui/material';
 
-/**
- * Amount string, Invoice status card title, increase or decrease rate, total number of action, status message, isIncreased
- * should come from redux store
- */
-
 const StatusCard = ({
   amount,
   title,
@@ -33,7 +28,7 @@ const StatusCard = ({
     ? { color: '#ffffffcb', fontSize: '14px' }
     : { color: '#76797e', fontSize: '14px' };
 
-  const cardPercentageStye = isIncreased
+  const cardPercentageStyle = isIncreased
     ? { color: 'green', fontSize: '14px' }
     : { color: 'red', fontSize: '14px' };
 
@@ -51,8 +46,8 @@ const StatusCard = ({
         </Typography>
         <Box sx={cardTitleBoxStyle}>
           <Typography sx={cardTitleStyle}>{title}</Typography>
-          <Typography sx={cardPercentageStye}>
-            {increaseRate > 0 && '+'} {increaseRate && increaseRate} %
+          <Typography sx={cardPercentageStyle}>
+            {increaseRate > 0 && '+'} {increaseRate} %
           </Typography>
         </Box>
         <Box sx={cardStatusBox}>
