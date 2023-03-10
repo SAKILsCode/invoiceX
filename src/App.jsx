@@ -1,15 +1,17 @@
-import { useState } from 'react';
-import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
+import SignUp from './pages/SignUp';
+import AddInvoice from './pages/AddInvoice/Index';
+import { useState } from 'react';
+
+
 
 const App = () => {
-  const [isLogin, setIsLogin] = useState(false);
+
   return (
     <>
-      <h1>from App</h1>
-
-      {!isLogin && <Home />}
-      {isLogin && <Dashboard />}
+    <AddInvoice></AddInvoice>
+   {/* <SignUp ></SignUp> */}
+    {/* <Dashboard></Dashboard> */}
     </>
   )
 };
