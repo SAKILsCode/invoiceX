@@ -9,9 +9,9 @@ const App = () => {
 
   return (
     <>
-    <AddInvoice></AddInvoice>
+    {/* <AddInvoice></AddInvoice> */}
    {/* <SignUp ></SignUp> */}
-    {/* <Dashboard></Dashboard> */}
+    <Dashboard></Dashboard>
     </>
   )
 };
