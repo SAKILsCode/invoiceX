@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import { Link } from "react-router-dom";
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -23,6 +24,14 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Container from '@mui/material/Container';
+import { Route,Routes } from 'react-router-dom';
+import ProductHome from '../../components/Products/ProductList/index';
+import ClientPage from '../../components/ClientPage/index';
+import Payment from '../../components/Payment/index';
+import SignUp from '../SignUp/index';
+import SignIn from '../SignIn/index';
+import ExpensiveReport from '../../components/Report/ExpenseReport/index';
+import SaleReport from '../../components/Report/SaleReport/index';
 
 const drawerWidth = 240;
 
@@ -92,7 +101,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function Dashboard() {
-    const sideBarData = ['Invoice', 'AddInvoice', 'Invoice-Details', 'Add Product','Product List','Payment','Sign In','Sing Up','Report']
+    const sideBarData = ['productHome', 'clientPage', 'paymentPage', 'singUpPage','ProductList','expensiveReport','singInPage','saleReport']
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -203,26 +212,28 @@ export default function Dashboard() {
             <Divider />
             <List>
             {sideBarData.map((text, index) => (
-                <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                <ListItemButton
-                    sx={{
-                    minHeight: 48,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 2.5,
-                    }}
-                >
-                    <ListItemIcon
-                    sx={{
-                        minWidth: 0,
-                        mr: open ? 3 : 'auto',
-                        justifyContent: 'center',
-                    }}
-                    >
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-                </ListItem>
+                <Link to={`/${text}`} >
+                  <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                  <ListItemButton
+                      sx={{
+                      minHeight: 48,
+                      justifyContent: open ? 'initial' : 'center',
+                      px: 2.5,
+                      }}
+                  >
+                      <ListItemIcon
+                      sx={{
+                          minWidth: 0,
+                          mr: open ? 3 : 'auto',
+                          justifyContent: 'center',
+                      }}
+                      >
+                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                      </ListItemIcon>
+                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                  </ListItemButton>
+                  </ListItem>
+                </Link>
             ))}
             </List>
             <Divider />
@@ -230,9 +241,35 @@ export default function Dashboard() {
         </Drawer>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
            
-           
+        <Routes>
+          <Route path="/productHome" element={<ProductHome />} />
+          <Route path="/clientPage" element={<ClientPage />} />
+          <Route path="/paymentPage" element={<Payment />} />
+          <Route path="/singUpPage" element={<SignUp />} />
+          <Route path="/singInPage" element={<SignIn />} />
+          <Route path="/expensiveReport" element={<ExpensiveReport />} />
+          <Route path="/saleReport" element={<SaleReport />} />
+          
+
+        </Routes>  
         </Box>
     </Box>
    
   );
 }
+
+
+{/* <InvoiceHome></InvoiceHome> */}
+    {/* <InvoiceStatusCard></InvoiceStatusCard> */}
+    {/* <ProductHome></ProductHome> */}
+    {/* <ClientPage></ClientPage> */}
+    {/* <Payment></Payment> */}
+    {/* <AddInvoice></AddInvoice> */}
+   {/* <SignUp ></SignUp> */}
+
+   // Report/ExpenseReport/index == <ExpenseReport />
+   // Report / SaleReport /index == <SaleReport />
+  //  shared/Breadcrumbs/index ==<InvoiceBreadcrumbs />
+  //  shared/DataListTable/index ==<TestTable />
+  //  shared/PresentingList/index ==<PresentingList />
+  //  shared/SearchBox/index ==<SearchBox />
