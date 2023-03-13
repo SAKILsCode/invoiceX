@@ -34,7 +34,9 @@ const MuiAppBar = styled(AppBar, {
   }),
 }));
 
-const Navbar = ({ menuList, isDrawerOpen, onDrawerOpen }) => {
+const profileSettings = ['Profile', 'Dashboard', 'Logout'];
+
+const Navbar = ({ isDrawerOpen, onDrawerOpen }) => {
   const [anchorElUser, setAnchorElUser] = useState(null);
 
   const onOpenUserMenu = (event) => {
@@ -104,7 +106,7 @@ const Navbar = ({ menuList, isDrawerOpen, onDrawerOpen }) => {
               open={Boolean(anchorElUser)}
               onClose={onCloseUserMenu}
             >
-              {menuList.map((item) => (
+              {profileSettings.map((item) => (
                 <MenuItem key={item} onClick={onCloseUserMenu}>
                   <Typography textAlign='center'>{item}</Typography>
                 </MenuItem>

@@ -22,9 +22,9 @@ const ClientPage = () => {
     <PresentingList
       title='CLIENTS'
       breadcrumbObj={{
-        parentLink: '/dashboard/client',
-        parentTitle: 'client',
-        childTitle: 'client',
+        parentLink: '/',
+        parentTitle: 'Dashboard',
+        childTitle: 'Clients',
       }}
       addButtonTitle='Add New'
       searchPlaceholder='Search by name'

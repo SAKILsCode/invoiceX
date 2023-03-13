@@ -22,9 +22,9 @@ const InvoiceHome = () => {
     <PresentingList
       title='INVOICE'
       breadcrumbObj={{
-        parentLink: '/dashboard/invoice',
-        parentTitle: 'invoice',
-        childTitle: 'invoice',
+        parentLink: '/',
+        parentTitle: 'Dashboard',
+        childTitle: 'Invoice',
       }}
       addButtonTitle='Add Invoice'
       searchPlaceholder='Search by name'
