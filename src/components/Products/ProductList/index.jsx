@@ -1,8 +1,8 @@
 import PresentingList from '../../shared/PresentingList';
 import { columns, rows } from '../productConstant';
 
-const ProductHome = () => {
-  const handleAddInvoice = () => {
+const Products = () => {
+  const handleAddProduct = () => {
     //TODO: popup add item component (Modal)
   }
 
@@ -20,22 +20,22 @@ const ProductHome = () => {
 
   return (
     <PresentingList
-      title='INVOICE'
+      title='PRODUCT'
       breadcrumbObj={{
-        parentLink: '/dashboard/invoice',
-        parentTitle: 'invoice',
-        childTitle: 'invoice',
+        parentLink: '/dashboard/product',
+        parentTitle: 'product',
+        childTitle: 'product',
       }}
-      addButtonTitle='Add Invoice'
+      addButtonTitle='Add Product'
       searchPlaceholder='Search by name'
       columnsArray={columns}
       rowsArray={rows}
 
-      addButtonHandler={handleAddInvoice}
+      addButtonHandler={handleAddProduct}
       handleActionView={handleActionView}
       handleActionEdit={handleActionEdit}
       handleActionDelete={handleActionDelete}
     />
   );
 };
-export default ProductHome;
+export default Products;
