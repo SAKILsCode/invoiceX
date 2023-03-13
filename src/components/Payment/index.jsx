@@ -24,9 +24,9 @@ const Payment = () => {
     <PresentingList
       title='PAYMENTS'
       breadcrumbObj={{
-        parentLink: '/dashboard/payment',
-        parentTitle: 'payment',
-        childTitle: 'payment',
+        parentLink: '/',
+        parentTitle: 'Dashboard',
+        childTitle: 'Payments',
       }}
       addButtonTitle='Add Payment'
       searchPlaceholder='Search by name'

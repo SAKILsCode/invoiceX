@@ -20,11 +20,11 @@ const Products = () => {
 
   return (
     <PresentingList
-      title='PRODUCT'
+      title='PRODUCTS'
       breadcrumbObj={{
-        parentLink: '/dashboard/product',
-        parentTitle: 'product',
-        childTitle: 'product',
+        parentLink: '/',
+        parentTitle: 'Dashboard',
+        childTitle: 'Products',
       }}
       addButtonTitle='Add Product'
       searchPlaceholder='Search by name'
