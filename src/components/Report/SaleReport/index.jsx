@@ -6,9 +6,9 @@ const SaleReport = () => {
     <PresentingList
       title='SALES REPORT'
       breadcrumbObj={{
-        parentLink: '/dashboard/report/sale',
-        parentTitle: 'report',
-        childTitle: 'sale',
+        parentLink: '/',
+        parentTitle: 'Dashboard',
+        childTitle: 'Sale Report',
       }}
       searchPlaceholder='Search by sale'
       columnsArray={saleColumns}
